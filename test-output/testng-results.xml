@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-06-27T14:27:32 IST" name="ASSIGNMENT TEST SUITE" finished-at="2024-06-27T14:27:47 IST" duration-ms="14880">
+    <groups>
+    </groups>
+    <test started-at="2024-06-27T14:27:32 IST" name="Chrome TEST" finished-at="2024-06-27T14:27:45 IST" duration-ms="12831">
+      <class name="com.exeevo.scripts.TMobileTest">
+        <test-method is-config="true" signature="setupEnv(java.lang.String)[pri:0, instance:com.exeevo.scripts.TMobileTest@4f83df68]" started-at="2024-06-27T14:27:32 IST" name="setupEnv" finished-at="2024-06-27T14:27:35 IST" duration-ms="2871" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupEnv -->
+        <test-method is-config="true" signature="preCondition()[pri:0, instance:com.exeevo.scripts.TMobileTest@4f83df68]" started-at="2024-06-27T14:27:35 IST" name="preCondition" finished-at="2024-06-27T14:27:35 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preCondition -->
+        <test-method signature="TCID_101_verifyTabletFilterFunctionality()[pri:1, instance:com.exeevo.scripts.TMobileTest@4f83df68]" started-at="2024-06-27T14:27:35 IST" name="TCID_101_verifyTabletFilterFunctionality" finished-at="2024-06-27T14:27:44 IST" duration-ms="9556" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TCID_101_verifyTabletFilterFunctionality -->
+        <test-method is-config="true" signature="postCondition()[pri:0, instance:com.exeevo.scripts.TMobileTest@4f83df68]" started-at="2024-06-27T14:27:44 IST" name="postCondition" finished-at="2024-06-27T14:27:44 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postCondition -->
+        <test-method is-config="true" signature="tearDownEnv()[pri:0, instance:com.exeevo.scripts.TMobileTest@4f83df68]" started-at="2024-06-27T14:27:44 IST" name="tearDownEnv" finished-at="2024-06-27T14:27:45 IST" duration-ms="300" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownEnv -->
+      </class> <!-- com.exeevo.scripts.TMobileTest -->
+    </test> <!-- Chrome TEST -->
+    <test started-at="2024-06-27T14:27:32 IST" name="Firefox TEST" finished-at="2024-06-27T14:27:47 IST" duration-ms="14880">
+      <class name="com.exeevo.scripts.TMobileTest">
+        <test-method is-config="true" signature="setupEnv(java.lang.String)[pri:0, instance:com.exeevo.scripts.TMobileTest@443118b0]" started-at="2024-06-27T14:27:32 IST" name="setupEnv" finished-at="2024-06-27T14:27:39 IST" duration-ms="7520" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupEnv -->
+        <test-method is-config="true" signature="preCondition()[pri:0, instance:com.exeevo.scripts.TMobileTest@443118b0]" started-at="2024-06-27T14:27:39 IST" name="preCondition" finished-at="2024-06-27T14:27:39 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preCondition -->
+        <test-method signature="TCID_101_verifyTabletFilterFunctionality()[pri:1, instance:com.exeevo.scripts.TMobileTest@443118b0]" started-at="2024-06-27T14:27:39 IST" name="TCID_101_verifyTabletFilterFunctionality" finished-at="2024-06-27T14:27:45 IST" duration-ms="6052" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TCID_101_verifyTabletFilterFunctionality -->
+        <test-method is-config="true" signature="postCondition()[pri:0, instance:com.exeevo.scripts.TMobileTest@443118b0]" started-at="2024-06-27T14:27:45 IST" name="postCondition" finished-at="2024-06-27T14:27:45 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postCondition -->
+        <test-method is-config="true" signature="tearDownEnv()[pri:0, instance:com.exeevo.scripts.TMobileTest@443118b0]" started-at="2024-06-27T14:27:45 IST" name="tearDownEnv" finished-at="2024-06-27T14:27:47 IST" duration-ms="1254" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownEnv -->
+      </class> <!-- com.exeevo.scripts.TMobileTest -->
+    </test> <!-- Firefox TEST -->
+  </suite> <!-- ASSIGNMENT TEST SUITE -->
+</testng-results>

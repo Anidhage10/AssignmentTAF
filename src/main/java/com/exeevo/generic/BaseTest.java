@@ -10,7 +10,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BaseTest {
 
-	private WebDriver webDriver;
+	private static ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
+	WebDriver driver = webDriver.get();
 	private SeleniumWrapperFunctions objSeleniumWrapperFunctions;
 	private Utilities objUtilities;
 	private ExcelDataProvider objExcelDataProvider;
@@ -28,19 +29,19 @@ public class BaseTest {
 //		String strBrowser = objConfig.getProperty("browser"); // config file
 
 		if (browser.equalsIgnoreCase("chrome")) {
-			webDriver = new ChromeDriver();
+			driver = new ChromeDriver();
 		} else if (browser.equalsIgnoreCase("firefox")) {
-			webDriver = new FirefoxDriver();
+			driver = new FirefoxDriver();
 		}
-		webDriver.manage().window().maximize();
+		driver.manage().window().maximize();
 		if (appType.equalsIgnoreCase("flipkart"))
-			webDriver.get(objConfig.getProperty("base_URL_Flipkart"));
+			driver.get(objConfig.getProperty("base_URL_Flipkart"));
 		if (appType.equalsIgnoreCase("amazon"))
-			webDriver.get(objConfig.getProperty("base_URL_Amazon"));
+			driver.get(objConfig.getProperty("base_URL_Amazon"));
 		if(appType.equalsIgnoreCase("tMobile"))
-			webDriver.get(objConfig.getProperty("base_URL_TMobile"));
-		webDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-		Pojo.setDriver(webDriver);
+			driver.get(objConfig.getProperty("base_URL_TMobile"));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+		Pojo.setDriver(driver);
 		objSeleniumWrapperFunctions = new SeleniumWrapperFunctions();
 		Pojo.setObjSeleniumWrapperFunctions(objSeleniumWrapperFunctions);
 		objUtilities = new Utilities();
@@ -55,7 +56,7 @@ public class BaseTest {
 	 */
 	public void tearDownWebEnv() {
 		try {
-			webDriver.quit();
+			driver.quit();
 		} catch (Exception exception) {
 			System.out.println("I got exception while closing the browser");
 		}
