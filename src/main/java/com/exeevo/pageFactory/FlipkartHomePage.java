@@ -16,15 +16,12 @@ public class FlipkartHomePage {
 	By loc_txt_iphoneDetails = By.xpath(
 			"//img[contains(@alt,'Apple iPhone 15 Pro Max')]/parent::div/following::div[contains(.,'Apple iPhone 15 Pro Max')]");
 
-	
 	// need to add regular expression in external files
 	String regexIphoneName = "Apple iPhone \\d{1,2} (?:Pro Max|Pro|Plus|Mini|SE|\\d{1,2}) \\(.*?\\)";
 	String regexPrice = "₹[\\d,]+";
 
 	public void verifyHomePageIsDisplayed() {
-
 		assertTrue(Pojo.getObjSeleniumWrapperFunctions().checkElementIsDisplayed(loc_Logo));
-
 	}
 
 	public void clickOnCloseButton() {
@@ -54,9 +51,9 @@ public class FlipkartHomePage {
 
 		}
 		String strProductName = Pojo.getObjUtilities().getDataUsingRegex(regexIphoneName, striPhoneDetails);
-		// System.out.println("Product Name :: "+strProductName);
+		System.out.println("Product Name :: " + strProductName);
 		String strProductPrice = Pojo.getObjUtilities().getDataUsingRegex(regexPrice, striPhoneDetails);
-		// System.out.println("strProductPrice :: "+strProductPrice);
+		System.out.println("strProductPrice :: " + strProductPrice);
 		return strProductName + "@" + strProductPrice;
 	}
 

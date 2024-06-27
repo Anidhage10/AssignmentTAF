@@ -23,7 +23,7 @@ public class TabletsPage {
 
 	public void clickOnClearAll() {
 
-		Assert.assertTrue(Pojo.getObjSeleniumWrapperFunctions().clickUsingJavascript(loc_txt_tablets));
+		Assert.assertTrue(Pojo.getObjSeleniumWrapperFunctions().clickUsingJavascript(loc_btn_clearAll));
 		System.out.println("clicked on clear all button");
 	}
 
@@ -35,7 +35,6 @@ public class TabletsPage {
 	public void applyFilter(String filter, String option) {
 		By loc_filterOptions = By.xpath(
 				"//legend[contains(.,'" + filter + "')]//input[contains(@name,'" + option + "')][@type='checkbox']");
-		Pojo.getObjSeleniumWrapperFunctions().scrollToViewElement(loc_filterOptions);
 		if (!Pojo.getObjSeleniumWrapperFunctions().isElementSelected(loc_filterOptions)) {
 			Assert.assertTrue(Pojo.getObjSeleniumWrapperFunctions().clickUsingJavascript(loc_filterOptions));
 			System.out.println(option + ": Option is selected.");

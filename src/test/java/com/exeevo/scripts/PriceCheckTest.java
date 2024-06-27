@@ -5,11 +5,14 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.exeevo.generic.BaseTest;
 import com.exeevo.generic.Pojo;
 import com.exeevo.pageFactory.AmazonSearchResultPage;
 import com.exeevo.pageFactory.FlipkartHomePage;
+
+import net.bytebuddy.asm.MemberSubstitution.Argument;
 
 public class PriceCheckTest extends BaseTest {
 
@@ -22,8 +25,9 @@ public class PriceCheckTest extends BaseTest {
 	}
 
 	@BeforeClass
-	public void setupEnv() {
-		this.initializeWebEnv("flipkart");
+	@Parameters("browser")
+	public void setupEnv(String browser) {
+		this.initializeWebEnv("flipkart", browser);
 		this.initPagesAndFlows();
 	}
 
@@ -50,7 +54,7 @@ public class PriceCheckTest extends BaseTest {
 	 * from the actual business logic and test scripts. In our project, we use an
 	 * external test data Excel sheet.
 	 */
-
+	
 	@Test(priority = 1)
 	public void TCID_101_verifyTabletFilterFunctionality() {
 		// URL comes from the property files

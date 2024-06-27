@@ -23,13 +23,13 @@ public class BaseTest {
 	 * initializeWebEnv - method is used for to initialize the web environment and setup the framework centralized objects.
 	 * @param appType
 	 */
-	public void initializeWebEnv(String appType) {
+	public void initializeWebEnv(String appType, String browser) {
 		this.loadPropertiesFiles();
-		String strBrowser = objConfig.getProperty("browser"); // config file
+//		String strBrowser = objConfig.getProperty("browser"); // config file
 
-		if (strBrowser.equalsIgnoreCase("chrome")) {
+		if (browser.equalsIgnoreCase("chrome")) {
 			webDriver = new ChromeDriver();
-		} else if (strBrowser.equalsIgnoreCase("firefox")) {
+		} else if (browser.equalsIgnoreCase("firefox")) {
 			webDriver = new FirefoxDriver();
 		}
 		webDriver.manage().window().maximize();

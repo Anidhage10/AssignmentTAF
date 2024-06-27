@@ -1,13 +1,20 @@
 package com.exeevo.scripts;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.beust.jcommander.Parameter;
 import com.exeevo.flows.TabletsFlow;
 import com.exeevo.generic.BaseTest;
+import com.exeevo.generic.Pojo;
 import com.exeevo.pageFactory.TabletsPage;
 
 public class TMobileTest extends BaseTest {
@@ -21,8 +28,9 @@ public class TMobileTest extends BaseTest {
 	}
 
 	@BeforeClass
-	public void setupEnv() {
-		this.initializeWebEnv("tMobile");
+	@Parameters("browser")
+	public void setupEnv(String browser) {
+		this.initializeWebEnv("tMobile", browser);
 		this.initPagesAndFlows();
 	}
 
@@ -57,5 +65,10 @@ public class TMobileTest extends BaseTest {
 		objTabletsFlow.selectFilter("Deals", "New", "Special offer");
 		objTabletsFlow.selectFilter("Operating system", "iPadOS", "Android");
 		objTabletsFlow.selectFilter("Brands", "all");
+		
+//		Actions action = new Actions(Pojo.getDriver());
+//		action.contextClick().build().perform();
+		
+		
 	}
 }
